@@ -746,7 +746,6 @@ config = {
     "EPOCHS": 60,
     "LATENT_CHANNELS": 3,
     "NUM_CLASSES": 4,
-    "VAE_CHECKPOINT_PATH": "/kaggle/input/vae-best.pth",
     "SAVE_DIR": "results_physics_aware",
     "CHECKPOINT_DIR": "check_point_physics_aware",
 
@@ -818,11 +817,7 @@ device = config["DEVICE"]
 vae_model = VAE(in_channels=3, out_channels=3, latent_channels=config["LATENT_CHANNELS"],
                 base_channel=config["COND_BASE_CHANNELS"],
                 downsample_factor=config["DOWN_SCALE_LATTENT"]).to(device)
-if os.path.exists(config["VAE_CHECKPOINT_PATH"]):
-    vae_model.load_state_dict(torch.load(config["VAE_CHECKPOINT_PATH"], map_location=device))
-    print("VAE checkpoint loaded successfully.")
-else:
-    print(f"Warning: VAE checkpoint not found. Using random weights.")
+
 vae_model.eval()
 for p in vae_model.parameters(): p.requires_grad = False
 
