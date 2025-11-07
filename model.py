@@ -769,7 +769,6 @@ config = {
 
     # --- DUAL ADAPTIVE SAMPLING PARAMETERS ---
     "SAMPLER_NUM_BINS": 8,  # Split NUM_STEPS into bins
-    "SAMPLER_MOMENTUM": 0.9,  # "Memory" of loss history (Not used in current sampler)
     "SAMPLER_MIN_JUMP": 1,  # Smallest step
     "SAMPLER_MAX_JUMP": 5,  # Largest step
     "SAMPLER_EXPLORATION": 0.1,  # 10% chance of random exploration
