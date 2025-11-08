@@ -792,14 +792,14 @@ os.makedirs(config["CHECKPOINT_DIR"], exist_ok=True)
 train_transform = transforms.Compose([transforms.ToPILImage(), transforms.ToTensor()])
 
 train_dataset = SemanticSegmentationDataset(
-    image_dir="/kaggle/input/5g-lte-nr-j03/J03_spectrumm/train/data",
-    label_dir="/kaggle/input/5g-lte-nr-j03/J03_spectrumm/train/label",
+    image_dir="/kaggle/input/5g-lte-nr/train/data",
+    label_dir="/kaggle/input/5g-lte-nr/train/label",
     transform=train_transform
 )
 
 val_dataset = SemanticSegmentationDataset(
-    image_dir="/kaggle/input/5g-lte-nr-j03/J03_spectrumm/test/data",
-    label_dir="/kaggle/input/5g-lte-nr-j03/J03_spectrumm/test/label",
+    image_dir="/kaggle/input/5g-lte-nr/test/data",
+    label_dir="/kaggle/input/5g-lte-nr/test/label",
     transform=train_transform
 )
 
